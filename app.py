@@ -14,6 +14,8 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(json.dumps(response).encode())
 
+
+
 def run():
     port = int(os.environ.get("FUNCTIONS_CUSTOMHANDLER_PORT", os.environ.get("PORT", 8080)))
     server_address = ("0.0.0.0", port)
