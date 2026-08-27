@@ -13,6 +13,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "application/json")
         self.end_headers()
         self.wfile.write(json.dumps(response).encode())
+        
 
 def run():
     port = int(os.environ.get("FUNCTIONS_CUSTOMHANDLER_PORT", os.environ.get("PORT", 8080)))
